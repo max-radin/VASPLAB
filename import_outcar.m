@@ -4,9 +4,10 @@ function [ result ] = import_outcar( filename, param )
 %   VASP OUTCAR file. param is string specifying which data should be
 %   imported. Allowed values are:
 %
-%    'forces': import forces on ions in eV/?.
+%    'forces': import forces on ions in eV/Angstrom.
 %    'tangent': import tangent direction from a NEB calculation.
 %    'energy': total energy.
+%    'elastic-moduli': elasticity tensor (i.e., "TOTAL ELASTIC MODULI").
 %
 %   n.b.: IMPORT_OUTCAR may run slowly if the OUTCAR file is large.
 %
@@ -55,6 +56,22 @@ function [ result ] = import_outcar( filename, param )
         fseek(fid,pos,'bof');
         line = fgetl(fid);
         result = sscanf(line,'  energy  without entropy= %*f energy(sigma->0) = %f');
+      case 'elastic-moduli'
+        while ~feof(fid)
+           line = fgetl(fid);
+            if numel(regexp(line,'TOTAL ELASTIC MODULI'))==1
+               pos = ftell(fid);
+            end
+        end
+        fseek(fid,pos,'bof');
+        fgetl(fid);
+        fgetl(fid);
+        result = zeros(6,6);
+        for i = 1:6
+            line = fgetl(fid);
+            line = regexprep(line,'[XYZ]*','');
+            result(i,:) = sscanf(line,'%f')';
+        end
   end
     fclose(fid);
 end
