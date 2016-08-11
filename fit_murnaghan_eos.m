@@ -8,6 +8,6 @@ function [ x,fval,exitflag ] = fit_murnaghan_eos( V, E )
 %   See also MURNAGHAN_EOS.
 
     x0 = [1 1 mean(V) min(E)]; % initial guess
-    banana = @(x)sum((murnaghan_eose(V,x)-E).^2);
+    banana = @(x)sum((murnaghan_eos(V,x)-E).^2);
     [x,fval,exitflag] = fminsearch(banana,x0,optimset('TolX',1e-12,'MaxFunEvals',3000)); 
 end
