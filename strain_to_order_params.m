@@ -1,6 +1,6 @@
-function [ strain_order_parameters ] = strain_tensor_to_order_params( E )
-%STRAIN_TENSOR_TO_ORDER_PARAMS Convert a strain tensor to order parameters.
-%   e = strain_tensor_to_order_params( E ) converts a strain tensor E,
+function [ strain_order_parameters ] = strain_to_order_params( E )
+%STRAIN_TO_ORDER_PARAMS Convert a strain tensor to order parameters.
+%   e = strain_to_order_params( E ) converts a strain tensor E,
 %   represented by a 3x3 matrix, to a 6x1 matrix e representing the strain
 %   order parameters. See Phys. Rev. B 90, 224105 (2014) for details.
 
