@@ -1,0 +1,13 @@
+name: Tests
+on: [pull_request]
+jobs:  
+  Run-Tests:
+    runs-on: ubuntu-latest
+    container:
+      image: gnuoctave/octave:6.3.0
+      options: --user root
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: octave .github/workflows/run_tests.m
