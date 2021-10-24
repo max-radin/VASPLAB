@@ -7,5 +7,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+        path: "~"
       - name: Run tests
         run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
