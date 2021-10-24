@@ -1,6 +1,9 @@
 # VASPLAB
 MATLAB functions for processing data from the [Vienna Ab initio Simulation Package (VASP)](https://www.vasp.at/) and performing other common tasks related to the atomistic modeling of solid-state systems.
 
+If you found VASPLAB to be useful, please consider leaving a review on the [MathWorks File Exchange](https://www.mathworks.com/matlabcentral/fileexchange/36836-vasplab).
+Note that VASPLAB is not affiliated with VASP Software GmbH, the developers of VASP.
+
 ## Installation
 To install VASPLAB, place the VASPLAB folder somewhere on your hard drive (such as in your MATLAB folder). Then, from MATLAB, open File->Set Path, and add the VASPLAB folder to your path.
 
