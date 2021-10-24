@@ -1,6 +1,6 @@
 % Run all unit tests.
 
-addpath(pwd)
+addpath(fullfile(pwd, "src"))
 objects = dir("tests");
 for i = 1:numel(objects)
     if regexp(objects(i).name, ".*\.m")
