@@ -5,4 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     container: gnuoctave/octave:6.3.0
     steps:
-      - run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
