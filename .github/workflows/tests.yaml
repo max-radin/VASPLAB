@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     container: gnuoctave/octave:6.3.0
     steps:
+      - name: Set permissions
+        run: sudo chmod 777 ${{ github.workspace }} 
       - name: Check out repository code
         uses: actions/checkout@v2
-        with:
-          path: "~"
       - name: Run tests
         run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
