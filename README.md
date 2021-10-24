@@ -1,5 +1,5 @@
 # VASPLAB
-MATLAB functions for processing data from the [Vienna Ab initio Simulation Package (VASP)](https://www.vasp.at/) and other other common tasks related to the atomistic modeling of solid-state systems.
+MATLAB functions for processing data from the [Vienna Ab initio Simulation Package (VASP)](https://www.vasp.at/) and performing other common tasks related to the atomistic modeling of solid-state systems.
 
 ## Installation
 To install VASPLAB, place the VASPLAB folder somewhere on your hard drive (such as in your MATLAB folder). Then, from MATLAB, open File->Set Path, and add the VASPLAB folder to your path.
@@ -102,6 +102,14 @@ Plot the energy along a NEB path.
 **reciprocal_lattice(A)**
 
 Find the reciprocal lattice.
+
+**strain_tensor_to_order_params(E)**
+
+Convert a strain tensor to order parameters.
+
+**strain2deformation(E)**
+
+Construct a deformation tensor from a strain tensor.
 
 **supercell(geometry1,array)**
 
