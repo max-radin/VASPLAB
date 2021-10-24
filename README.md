@@ -5,7 +5,9 @@ If you found VASPLAB to be useful, please consider leaving a review on the [Math
 Note that VASPLAB is not affiliated with VASP Software GmbH, the developers of VASP.
 
 ## Installation
-To install VASPLAB, place the VASPLAB folder somewhere on your hard drive (such as in your MATLAB folder). Then, from MATLAB, open File->Set Path, and add the VASPLAB `src` folder to your path.
+To install VASPLAB, place the VASPLAB folder somewhere on your hard drive (such as in your MATLAB folder).
+Then, from MATLAB, open File->Set Path, and add the VASPLAB `src` folder to your path.
+(For Octave, the Set Path menu can be found under Edit.)
 
 ## Usage
 Below is a summary of VASPLAB functions. For more details, see documentation in source code (or use the `help` command, e.g. `help import_poscar`).
