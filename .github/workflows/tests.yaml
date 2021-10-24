@@ -2,6 +2,7 @@ name: Tests
 on: [pull_request]
 jobs:  
   Run-Tests:
+    name: Run Tests
     runs-on: ubuntu-latest
     container:
       image: gnuoctave/octave:6.3.0
