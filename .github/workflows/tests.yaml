@@ -1,7 +1,8 @@
 name: Tests
 on: [push]
-jobs:
+jobs:  
   Run-Tests:
-    runs-on: gnuoctave/octave
+    runs-on: ubuntu-latest
+    container: gnuoctave/octave
     steps:
       - run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
