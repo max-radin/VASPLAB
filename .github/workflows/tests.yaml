@@ -3,6 +3,6 @@ on: [push]
 jobs:  
   Run-Tests:
     runs-on: ubuntu-latest
-    container: gnuoctave/octave
+    container: gnuoctave/octave:6.3.0
     steps:
       - run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
