@@ -9,11 +9,5 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Get directory
-        run: pwd
-      - name: Get directory contents
-        run: ls
-      - name: Get workspace contents
-        run: ls ${{ github.workspace }}
       - name: Run tests
-        run: octave ${{ github.workspace }}/.github/workflows/run_tests.m
+        run: octave .github/workflows/run_tests.m
