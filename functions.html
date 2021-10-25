@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Functions &mdash; VASPLAB  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="VASPLAB" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> VASPLAB
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VASPLAB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Functions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-src">
+<span id="functions"></span><h1>Functions<a class="headerlink" href="#module-src" title="Permalink to this headline"></a></h1>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.atomic_radius">
+<span class="sig-name descname"><span class="pre">atomic_radius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.atomic_radius" title="Permalink to this definition"></a></dt>
+<dd><p>ATOMIC_RADIUS Get atomic radius of element.
+r = ATOMIC_RADIUS(Z) returns the atomic radius of element number Z in
+Angstroms, as given in J. Chem. Phys. 47, 1300 (1967) doi:
+10.1063/1.1712084. Z can also be a string the the element symbol. For
+unrecognized symbols/element numbers, a a value of 1.0 is returned.</p>
+<p>See also CHEMSYM2NUMBER, NUMBER2CHEMSYM</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.chemsym2number">
+<span class="sig-name descname"><span class="pre">chemsym2number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">symbol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.chemsym2number" title="Permalink to this definition"></a></dt>
+<dd><p>CHEMSYM2NUMBER Get the atomic number for a chemical symbol.
+Z = CHEMSYM2NUMBER(symbol) returns the atomic number of the element
+with the given chemical symbol.</p>
+<p>See also ATOMIC_RADIUS, NUMBER2CHEMSYM</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.export_df3">
+<span class="sig-name descname"><span class="pre">export_df3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">chg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.export_df3" title="Permalink to this definition"></a></dt>
+<dd><p>EXPORT_DF3 Export volumetric data as a DF3 file.
+status = export_df3(filename,chg) exports the volumetric data contained
+the 3 dimensional array chg as a DF3 file. This format is compatible
+with the POV-Ray ray-tracing package. The data is scaled up by a factor
+of 1,000,000.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.export_poscar">
+<span class="sig-name descname"><span class="pre">export_poscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.export_poscar" title="Permalink to this definition"></a></dt>
+<dd><p>EXPORT_POSCAR Export a geometry struct as a VASP POSCAR file.
+status = EXPORT_POSCAR(filename,geometry) exports the geometry as a
+VASP POSCAR file.</p>
+<p>See also IMPORT_POSCAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.fit_murnaghan_eos">
+<span class="sig-name descname"><span class="pre">fit_murnaghan_eos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">V</span></em>, <em class="sig-param"><span class="pre">E</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.fit_murnaghan_eos" title="Permalink to this definition"></a></dt>
+<dd><p>FIT_MURNAGHAN_EOS Fit to the Murnaghan equation of state.
+[ x,fval,exitflag ] = fit_murnaghan_eos( V, E ) attempts to fit the
+and energies given by the 1xN arrays V and E to the Murnaghan equation
+of state. x contains the fitted parameters:
+x = [B0 B0’ V0 E0]</p>
+<p>See also MURNAGHAN_EOS.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.hyperdistance">
+<span class="sig-name descname"><span class="pre">hyperdistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">geo1</span></em>, <em class="sig-param"><span class="pre">geo2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.hyperdistance" title="Permalink to this definition"></a></dt>
+<dd><p>HYPERDISTANCE Calculate hyperdistance between two geometry structures.
+x = HYPERDISTANCE(geometry1,geometry2) evaluates the hyperdistance
+between two geometries. The hyperdistance is defined as the root mean
+square of the displacements of each atom. The returned value is only
+meaningful if the two geometries have the same lattice vectors. The
+minimum image convention is used to calculate atomic displacements. See
+IMPORT_POSCAR for a detailed description of the geometry structure.</p>
+<p>See also IMPORT_POSCAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_chgcar">
+<span class="sig-name descname"><span class="pre">import_chgcar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_chgcar" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT_CHGCAR Import a VASP CHGCAR file.
+[chg,mag,geometry] = import_chgcar(filename)
+Import a VASP CHGCAR file. If no filename is specified, data is read
+from CHGCAR. chg and mag are three dimensional arrays containing the
+charge magnetization densities in Bohr magneton per cubic Angstrom.
+Note that these are not the same units as the CHGCAR file. geometry is
+a struct describing the cell geometry; see IMPORT_POSCAR for a detailed
+description.</p>
+<p>See also IMPORT_POSCAR, IMPORT_LOCPOT.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_doscar">
+<span class="sig-name descname"><span class="pre">import_doscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_doscar" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT_DOSCAR Import a VASP DOSCAR file.
+[energy,total_dos,efermi,pdos] = IMPORT_DOSCAR(filename) imports a
+VASP DOSCAR file. If no filename is specified, the file DOSCAR is read.
+energy contains the bin energies in eV, total_dos contains the total
+DOS in states per unit cell eV, efermi is the Fermi level in eV, and
+pdos contains the site projected DOS in states per unit cell eV.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_eigenval">
+<span class="sig-name descname"><span class="pre">import_eigenval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_eigenval" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT_EIGENVAL Import a VASP EIGENVAL file.
+[eigenvalues,kpoints,nelect] = IMPORT_EIGENVAL(filename) imports a VASP
+EIGENVAL file. Optional parameter filename specifies the name of the
+file. eigenvalues is a NKPOINTS x NBANDS x ISPIN array of eigenvalues,
+kpoints is a NKPOINTS x 4 array of k-point coordinates and weights, and
+nelect is the number of electrons.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_locpot">
+<span class="sig-name descname"><span class="pre">import_locpot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_locpot" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT_LOCPOT Import a VASP LOCPOT file.
+[locpot,geometry] = import_locpot(filename) imports a VASP LOCPOT file.
+If no filename is specified, data is read from LOCPOT. locpot is a
+three dimensional array containing the local potential in eV. geometry
+is a geometry structure; see IMPORT_POSCAR for a detailed description.</p>
+<p>See also IMPORT_POSCAR, IMPORT_CHGCAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_oszicar">
+<span class="sig-name descname"><span class="pre">import_oszicar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_oszicar" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT_OSZICAR Import energies from a VASP OSZICAR file.
+energy = import_oszicar(filename) imports the energies at each
+optimization step from a VASP OSZICAR file. If no filename is
+specified, data is read from OSZICAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_outcar">
+<span class="sig-name descname"><span class="pre">import_outcar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">param</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_outcar" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT_OUTCAR Import data from a VASP OUTCAR file.
+result = import_outcar(filename,param) imports selected data from a
+VASP OUTCAR file. param is string specifying which data should be
+imported. Allowed values are:</p>
+<blockquote>
+<div><p>‘forces’: import forces on ions in eV/Angstrom.
+‘tangent’: import tangent direction from a NEB calculation.
+‘energy’: total energy.
+‘elastic-moduli’: elasticity tensor (i.e., “TOTAL ELASTIC MODULI”).</p>
+</div></blockquote>
+<p>n.b.: IMPORT_OUTCAR may run slowly if the OUTCAR file is large.</p>
+<p>See also VASP_XML.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.import_poscar">
+<span class="sig-name descname"><span class="pre">import_poscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.import_poscar" title="Permalink to this definition"></a></dt>
+<dd><p>IMPORT POSCAR Import a VASP POSCAR/CONTCAR file.
+geometry = import_poscar(filename) imports the given VASP
+POSCAR/CONTCAR file. The data is contained in a geometry structure with
+the following fields:</p>
+<blockquote>
+<div><p>filename: string containing name of the file.
+comment: first line of file.
+lattice: 3x3 matrix whose rows are the lattice vectors.
+symbols: cell array containing chemical symbols.
+atomcount: nx1 array containing the number of atoms of each type.
+selective: boolean indicating whether selective dynamics is enabled.
+coords: nx3 matrix containing ion positions in fractional coordinates.</p>
+</div></blockquote>
+<p>See also EXPORT_POSCAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.interpolate_poscar">
+<span class="sig-name descname"><span class="pre">interpolate_poscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename1</span></em>, <em class="sig-param"><span class="pre">filename2</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.interpolate_poscar" title="Permalink to this definition"></a></dt>
+<dd><p>INTERPOLATE_POSCAR Interpolate a chain of images between two POSCAR files.
+status = interpolate_poscar(filename1,filename2,N) interpolates a chain
+of N images between two POSCAR files. The interpolated geometries are
+placed in 00/POSCAR, 01/POSCAR … N+1/POSCAR. This is useful for
+setting up NEB calculations.</p>
+<p>See also PERMUTE_COORDS.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.jmol_color">
+<span class="sig-name descname"><span class="pre">jmol_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.jmol_color" title="Permalink to this definition"></a></dt>
+<dd><p>JMOL_COLOR Get color assigned to an element.
+rgb = JMOL_COLOR(Z) returns a vector containing the RGB color assigned
+to the element with atomic number Z. See
+<a class="reference external" href="http://jmol.sourceforge.net/jscolors/">http://jmol.sourceforge.net/jscolors/</a></p>
+<p>rgb = JMOL_COLOR(symbol) returns a vector containing the RGB color
+assigned to the element with the given chemical symbol</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.kpath_length">
+<span class="sig-name descname"><span class="pre">kpath_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">k</span></em>, <em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.kpath_length" title="Permalink to this definition"></a></dt>
+<dd><p>KPATH_LENGTH Find the distance along a path in k-space.
+[ s ] = kpath_length( k, A, mode ) calculates the legnth along a series
+of N points in k-space whose fractional coordinates are given by the
+3xN array k. This is useful for creating band structure plots. The 3x3
+matrix A gives the lattice vectors (mode = ‘direct’) or the reciprocal
+lattice vectors (mode = ‘reciprocal’). If mode is not specified, the
+default is reciprocal.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.murnaghan_eos">
+<span class="sig-name descname"><span class="pre">murnaghan_eos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">V</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.murnaghan_eos" title="Permalink to this definition"></a></dt>
+<dd><p>MURNAGHAN_EOS Evaluate the Murnaghan equation of state.
+murnaghan_eos(V, x) gives the Murnaghan equation of state evaluated at a
+series of volumes given by the 1xN array V. x contains the parameters:
+x = [B0 B0’ V0 E0]</p>
+<p>See also FIT_MURNAGHAN_EOS.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.neb_energies">
+<span class="sig-name descname"><span class="pre">neb_energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">directory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.neb_energies" title="Permalink to this definition"></a></dt>
+<dd><p>NEB_ENERGIES Extract energies and hyperdistance from NEB calculation.
+[energy,x] = NEB_ENERGIES(directory) extracts the energies and
+hyperdistance of each image from an NEB calculation. The optional
+argument directory can be used to specify the directory containing the
+subdirectories 00, 01, etc. If directory is specified, the current
+directory is used. If no OUTCAR file is present in subdirectories 00
+and N+1, then first and last value of energy of will be NaN.</p>
+<p>See also NEB_SPLINE, PLOT_NEB_SPLINE, HYPERDISTANCE.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.neb_spline">
+<span class="sig-name descname"><span class="pre">neb_spline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">directory</span></em>, <em class="sig-param"><span class="pre">N</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.neb_spline" title="Permalink to this definition"></a></dt>
+<dd><p>NEB_SPLINE Fit energies and forces of a NEB calculation using a spline.
+[energy,x] = neb_spline(directory,N) interpolates the energies from
+an NEB calculation using piecewise cubic Hermite polynomial
+interpolation. Optional argument directory specifies the directory
+containing the subdirectories 00, 01, etc. Optional argument N
+specifies the number of points to interpolate; the default is 1000.
+Both the energies and forces are used to perform the interpolation.
+The vector energy contains the energy, and the vector x contains the
+hyperdistance along the path.</p>
+<p>See also NEB_ENERGIES, PLOT_NEB_SPLINE, HYPERDISTANCE.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.num_images">
+<span class="sig-name descname"><span class="pre">num_images</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.num_images" title="Permalink to this definition"></a></dt>
+<dd><p>NUM_IMAGES Determine number of images used in a NEB calculation.
+N = NUM_IMAGES() determines the number of images used in an NEB
+calculation by looking for directories 00, 01 … N+1.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.number2chemsym">
+<span class="sig-name descname"><span class="pre">number2chemsym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.number2chemsym" title="Permalink to this definition"></a></dt>
+<dd><p>NUMBER2CHEMSYM Get the chemical symbol for an atomic number.
+symbol = NUMBER2CHEMSYM(Z) returns the chemical symbol of element with
+atomic number Z.</p>
+<p>See also ATOMIC_RADIUS, CHEMSYM2NUMBER</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.pchipd">
+<span class="sig-name descname"><span class="pre">pchipd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">y</span></em>, <em class="sig-param"><span class="pre">d</span></em>, <em class="sig-param"><span class="pre">xx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.pchipd" title="Permalink to this definition"></a></dt>
+<dd><p>PCHIPD  Piecewise Cubic Hermite Interpolating Polynomial with Derivatives.
+PP = PCHIPD(X,Y,D) provides the piecewise cubic polynomial which
+interpolates values Y and derivatives D at the sites X.  This is meant
+to augment the built-in Matlab function PCHIP, which does not allow the
+user to specify derivatives.</p>
+<p>X must be a vector.</p>
+<p>If Y and D are vectors, then Y(i) and D(i) are the value and derivative
+to be matched at X(i).</p>
+<p>If Y and D are matrices, then size(Y,2) == size(D,2) == length(X).
+Also, size(Y,1) == size(D,1).  Use this for interpolating vector valued
+functions.</p>
+<p>YY = PCHIPD(X,Y,D,XX) is the same as YY = PPVAL(PCHIPD(X,Y,D),XX), thus
+providing, in YY, the values of the interpolant at XX.</p>
+<dl class="simple">
+<dt>Example comparing SPLINE, PCHIP, and PCHIPD</dt><dd><p>a = -10;
+b = 10;
+x = linspace(a,b,7);
+f = &#64;(x) 1./(1+exp(-x));  % logistic function
+df = &#64;(x) f(x).*(1-f(x)); % derivative of the logistic function
+t = linspace(a,b,50);
+r = f(t);
+p = pchip(x,f(x),t);
+s = spline(x,f(x),t);
+q = pchipd(x,f(x),df(x),t);
+plot(t,r,’k’,x,f(x),’o’,t,p,’-‘,t,s,’-.’,t,q,’–‘)
+legend(‘true’,’data’,’pchip’,’spline’,’pchipd’,4)</p>
+</dd>
+</dl>
+<p>See also INTERP1, SPLINE, PCHIP, PPVAL, MKPP, UNMKPP.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.permute_coords">
+<span class="sig-name descname"><span class="pre">permute_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">geometry1</span></em>, <em class="sig-param"><span class="pre">geometry2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.permute_coords" title="Permalink to this definition"></a></dt>
+<dd><p>PERMUTE_COORDS Permute ions in a geometry to match another geometry.
+[geometry,index] = PERMUTE_COORDS(geometry1,geometry2) returns a
+geometry that is the same as geometry1 except that the order of the
+ions has been permuted to match geometry2. That is, the ions of
+geometry1 are reordered such that the ith ion is the ion which is
+closest to the ith ion of geometry2.</p>
+<p>This function is useful for setting up NEB calculations. If all ions
+stay at their original site, PERMUTE_COORDS will generally provide the
+correct permutation. This is also true if only one ion moves to a
+different site (e.g. vacancy migration). However, if more than one ion
+moves to a different site, the results may be unexpected.</p>
+<p>See also IMPORT_POSCAR, INTERPOLATE_POSCAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.plot_neb_spline">
+<span class="sig-name descname"><span class="pre">plot_neb_spline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">directory</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.plot_neb_spline" title="Permalink to this definition"></a></dt>
+<dd><p>PLOT_NEB_SPLINE Plot the energy along a NEB path.
+result = PLOT_NEB_SPLINE() plots the energy as a function of
+hyperdistance using the results of a NEB calculation. Each image
+directory (01, 02, … NIMG) must contain an OUTCAR and CONTCAR file.
+The end points (00 and NIMG+1) must contain an OUTCAR and POSCAR file.
+The energies are fit with a spline using NEB_SPLINE.</p>
+<p>See also NEB_ENERGIES, NEB_SPLINE, HYPERDISTANCE.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.reciprocal_lattice">
+<span class="sig-name descname"><span class="pre">reciprocal_lattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">A</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.reciprocal_lattice" title="Permalink to this definition"></a></dt>
+<dd><p>RECIPROCAL_LATTICE Find the reciprocal lattice.
+B = RECIPROCAL_LATTICE(A) returns the lattice vectors (as
+rows of B) for the reciprocal lattice of the lattice whose lattice
+vectors are given by the rows of A.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.strain_to_deformation">
+<span class="sig-name descname"><span class="pre">strain_to_deformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">E</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.strain_to_deformation" title="Permalink to this definition"></a></dt>
+<dd><p>STRAIN_TO_DEFORMATION Construct a deformation tensor from a strain tensor.
+F = strain_to_deformation( E ) computes the rotation-free deformation
+tensor F corresponding to the Green-Lagrange strain tensor E.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.strain_to_order_params">
+<span class="sig-name descname"><span class="pre">strain_to_order_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">E</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.strain_to_order_params" title="Permalink to this definition"></a></dt>
+<dd><p>STRAIN_TO_ORDER_PARAMS Convert a strain tensor to order parameters.
+e = strain_to_order_params( E ) converts a strain tensor E,
+represented by a 3x3 matrix, to a 6x1 matrix e representing the strain
+order parameters. See Phys. Rev. B 90, 224105 (2014) for details.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.supercell">
+<span class="sig-name descname"><span class="pre">supercell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">geo1</span></em>, <em class="sig-param"><span class="pre">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.supercell" title="Permalink to this definition"></a></dt>
+<dd><p>SUPERCELL Create a supercell by replicating a geometry.
+geometry2 = SUPERCELL(geometry1,array) generates a new geometry that is
+an array(1) x array(2) x array(3) supercell of geometry1.</p>
+<p>See also IMPORT_POSCAR.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.vasp_xml">
+<span class="sig-name descname"><span class="pre">vasp_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em>, <em class="sig-param"><span class="pre">param</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.vasp_xml" title="Permalink to this definition"></a></dt>
+<dd><p>VASP_XML Import data from a vasprun.xml file.
+result = VASP_XML(filename,param) imports specified data from a
+vasprun.xml file. param is a string which specifies which data should
+be imported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the XML file.</p></li>
+<li><p><strong>param</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – <p>Which data to extract. Available options:</p>
+<ul>
+<li><p>’energy’: energy of the last optimization step.</p></li>
+<li><p>’all-energies’: energy at each optimization step.</p></li>
+<li><p>’nkpoints’: number of k-points.</p></li>
+<li><p>’volume’: volume of the cell in the last optimization step.</p></li>
+<li><p>’vbm-occ’: valence band maximum, as determined by occupancies.</p></li>
+<li><p>’cbm-occ’: conduction band minimum, as determined by occupancies.</p></li>
+<li><p>’vbm’: valence band maximum, as determined by band-filling.</p></li>
+<li><p>’cbm’: conduction band minimum, as determined by band-filling.</p></li>
+<li><p>’all-forces’: array of forces on ions during all optimization steps.</p></li>
+<li><p>’eigenvalues’: array of eigenvalues.</p></li>
+<li><p>’occupancies’: array of occupancies.</p></li>
+<li><p>’kpoints-reciprocal’: coordinates of k-points in the reciprocal basis.</p></li>
+<li><p>’kpoints-cartesian’: coordinates of k-points in Cartesian coordinates.</p></li>
+<li><p>’basis’: array whose rows are the lattice vectors.</p></li>
+<li><p>’dos’: density of states.</p></li>
+<li><p>’edos’: energy at each DOS bin.</p></li>
+<li><p>’pdos’: partial density of states.</p></li>
+<li><p>’chemical-symbols’: cell array containing chemical symbols of each ion.</p></li>
+<li><p>’natoms’: vector containing number of ions of each type.</p></li>
+<li><p>’Z’: array containing valence number of each ion type.</p></li>
+<li><p>’nelect’: total number of electrons.</p></li>
+<li><p>’ispin’: 1 = non-spin-polarized, 2 = spin-polarized</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data extracted from XML file.</p>
+</dd>
+</dl>
+<p>n.b.: VASP_XML may run slowly if the xml file is large. In some
+cases, it may be necessary to increase the heap space for the Java VM.
+Read more on the Mathworks website: <a class="reference external" href="http://www.mathworks.com/support/solutions/en/data/1-18I2C/">http://www.mathworks.com/support/solutions/en/data/1-18I2C/</a></p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="VASPLAB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Max Radin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
