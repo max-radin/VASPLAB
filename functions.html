@@ -416,46 +416,35 @@ an array(1) x array(2) x array(3) supercell of geometry1.</p>
 <dd><p>VASP_XML Import data from a vasprun.xml file.
 result = VASP_XML(filename,param) imports specified data from a
 vasprun.xml file. param is a string which specifies which data should
-be imported.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the XML file.</p></li>
-<li><p><strong>param</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – <p>Which data to extract. Available options:</p>
-<ul>
-<li><p>’energy’: energy of the last optimization step.</p></li>
-<li><p>’all-energies’: energy at each optimization step.</p></li>
-<li><p>’nkpoints’: number of k-points.</p></li>
-<li><p>’volume’: volume of the cell in the last optimization step.</p></li>
-<li><p>’vbm-occ’: valence band maximum, as determined by occupancies.</p></li>
-<li><p>’cbm-occ’: conduction band minimum, as determined by occupancies.</p></li>
-<li><p>’vbm’: valence band maximum, as determined by band-filling.</p></li>
-<li><p>’cbm’: conduction band minimum, as determined by band-filling.</p></li>
-<li><p>’all-forces’: array of forces on ions during all optimization steps.</p></li>
-<li><p>’eigenvalues’: array of eigenvalues.</p></li>
-<li><p>’occupancies’: array of occupancies.</p></li>
-<li><p>’kpoints-reciprocal’: coordinates of k-points in the reciprocal basis.</p></li>
-<li><p>’kpoints-cartesian’: coordinates of k-points in Cartesian coordinates.</p></li>
-<li><p>’basis’: array whose rows are the lattice vectors.</p></li>
-<li><p>’dos’: density of states.</p></li>
-<li><p>’edos’: energy at each DOS bin.</p></li>
-<li><p>’pdos’: partial density of states.</p></li>
-<li><p>’chemical-symbols’: cell array containing chemical symbols of each ion.</p></li>
-<li><p>’natoms’: vector containing number of ions of each type.</p></li>
-<li><p>’Z’: array containing valence number of each ion type.</p></li>
-<li><p>’nelect’: total number of electrons.</p></li>
-<li><p>’ispin’: 1 = non-spin-polarized, 2 = spin-polarized</p></li>
-</ul>
-</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Data extracted from XML file.</p>
-</dd>
-</dl>
+be imported. Allowed values are:</p>
+<blockquote>
+<div><p>‘energy’: energy of the last optimization step.
+‘all-energies’: energy at each optimization step.
+‘nkpoints’: number of k-points.
+‘volume’: volume of the cell in the last optimization step.
+‘vbm-occ’: valence band maximum, as determined by occupancies.
+‘cbm-occ’: conduction band minimum, as determined by occupancies.
+‘vbm’: valence band maximum, as determined by band-filling.
+‘cbm’: conduction band minimum, as determined by band-filling.
+‘all-forces’: array of forces on ions during all optimization steps.
+‘eigenvalues’: array of eigenvalues.
+‘occupancies’: array of occupancies.
+‘kpoints-reciprocal’: coordinates of k-points in the reciprocal basis.
+‘kpoints-cartesian’: coordinates of k-points in Cartesian coordinates.
+‘basis’: array whose rows are the lattice vectors.
+‘dos’: density of states.
+‘edos’: energy at each DOS bin.
+‘pdos’: partial density of states.
+‘chemical-symbols’: cell array containing chemical symbols of each ion.
+‘natoms’: vector containing number of ions of each type.
+‘Z’: array containing valence number of each ion type.
+‘nelect’: total number of electrons.
+‘ispin’: 1 = non-spin-polarized, 2 = spin-polarized</p>
+</div></blockquote>
 <p>n.b.: VASP_XML may run slowly if the xml file is large. In some
 cases, it may be necessary to increase the heap space for the Java VM.
-Read more on the Mathworks website: <a class="reference external" href="http://www.mathworks.com/support/solutions/en/data/1-18I2C/">http://www.mathworks.com/support/solutions/en/data/1-18I2C/</a></p>
+Read more on the &lt;a href=”matlab:
+web(’<a class="reference external" href="http://www.mathworks.com/support/solutions/en/data/1-18I2C/">http://www.mathworks.com/support/solutions/en/data/1-18I2C/</a>’)”&gt;MathWorks website&lt;/a&gt;.</p>
 </dd></dl>
 
 </section>
